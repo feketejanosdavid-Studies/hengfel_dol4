@@ -1,10 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+
+
 export default function App() {
+  const [radius, setRadius] = useState('');
+  const [height, setHeight] = useState('');
+  
+  function startCalc() {
+    let result = 2*Math.PI*Math.pow(radius,2)+2*Math.PI*radius*height*(radius+height);
+    return result
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>kör alapú henger felszín számítás</Text>
       <StatusBar style="auto" />
     </View>
   );
